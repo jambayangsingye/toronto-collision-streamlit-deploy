@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Logs and temp
+*.log
+*.tmp
+*.temp
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Keep repo lightweight: ignore everything in data/models except deployment assets
+data/*
+models/*
+
+!data/data_raw/
+!data/data_raw/Neighbourhoods.geojson
+!data/processed/
+!data/processed/supervised_hood_3h_multiclass.xlsx
+!models/stacking_4model_dashboard_bundle.pkl
