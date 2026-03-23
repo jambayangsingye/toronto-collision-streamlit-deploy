@@ -592,9 +592,10 @@ def get_model_assets(history_signature: str):
         if candidate.exists():
             try:
                 bundle = joblib.load(candidate)
+                st.success(f"Loaded bundle: {candidate.name}")
                 return {"mode": "bundle", "bundle": bundle, "bundle_path": candidate}
-            except Exception:
-                pass
+            except Exception as e:
+                st.error(f"Failed to load bundle {candidate.name}: {e}")
 
     # 2) If not found, fall back to the app's generic bundle loader
     bundle, bundle_path = load_best_bundle(paths.models_dir)
